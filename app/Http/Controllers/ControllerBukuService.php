@@ -37,8 +37,8 @@ class ControllerBukuService extends Controller
     }
 
     //Fungsi 3: DELETE
-    public function delete(Request $req){
-        $hapus = ModelBuku::where('id', $req->id) -> delete();
+    public function delete(Request $req, $id){
+        $hapus = ModelBuku::where('id', $id) -> delete();
         if ($hapus) {
             return response() -> json([
                 'status' => 'SUCCESS',
